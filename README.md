@@ -1,6 +1,9 @@
 # Manual Photography Camera Exposure Simulator
 
-An optical-engineering and digital-imaging simulation web application built using **React**, **TypeScript**, **Vite**, **Zustand**, **Canvas API**, and **CSS Modules**. 
+An optical-engineering and digital-imaging simulation web application built using **React**, **TypeScript**, **Vite**, **Zustand**, **Canvas API**, and **CSS Modules**.
+
+### 🌐 Live Production Demo: [react-project-cyan-iota.vercel.app](https://react-project-cyan-iota.vercel.app)
+*(Alternative: [react-project-57ou8dhj7-danish1323s-projects.vercel.app](https://react-project-57ou8dhj7-danish1323s-projects.vercel.app))* 
 
 This simulator replicates the rear interface of a professional DSLR mirrorless camera (inspired by the **Sony A7 IV** chassis layout) and dynamically models the physics of the **Exposure Triangle** (Aperture, Shutter Speed, ISO) on real-world photograph assets at 60 FPS.
 
