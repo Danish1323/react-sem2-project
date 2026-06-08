@@ -19,9 +19,9 @@ export default function ExposureTriangleForm() {
   } = useCameraStore();
 
   // Find index positions of current settings in discrete arrays
-  const apertureIdx = APERTURES.indexOf(aperture);
-  const shutterIdx = SHUTTER_SPEEDS.indexOf(shutter);
-  const isoIdx = ISO_VALUES.indexOf(iso);
+  const apertureIdx = APERTURES.indexOf(aperture as any);
+  const shutterIdx = SHUTTER_SPEEDS.indexOf(shutter as any);
+  const isoIdx = ISO_VALUES.indexOf(iso as any);
 
   return (
     <div className={styles.formContainer}>
