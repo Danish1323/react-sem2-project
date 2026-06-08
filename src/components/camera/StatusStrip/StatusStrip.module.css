@@ -1,0 +1,79 @@
+/* src/components/camera/StatusStrip/StatusStrip.module.css */
+.statusStrip {
+  width: 100%;
+  background: #111111;
+  border-top: 2px solid var(--camera-bevel);
+  border-radius: 0 0 var(--lcd-border-radius) var(--lcd-border-radius);
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  border-bottom: 2px solid #0a0a0a;
+}
+
+.leftSegment {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.rightSegment {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.item {
+  font-family: var(--font-family);
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+.divider {
+  color: var(--text-muted);
+  font-size: 10pt;
+}
+
+.sceneName {
+  color: #ffffff;
+}
+
+.exposureStatus {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.indicatorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.correctExposure {
+  color: #4caf50;
+}
+.correctExposure .indicatorDot {
+  background-color: #4caf50;
+  box-shadow: 0 0 6px #4caf50;
+}
+
+.imperfectExposure {
+  color: var(--text-orange);
+}
+.imperfectExposure .indicatorDot {
+  background-color: var(--text-orange);
+  box-shadow: 0 0 6px var(--text-orange);
+}
+
+.clock {
+  font-family: monospace;
+  font-size: 11pt;
+  color: #ffffff;
+}

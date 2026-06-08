@@ -1,0 +1,96 @@
+/* src/components/camera/CameraButtons/CameraButtons.module.css */
+.buttonStack {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: linear-gradient(180deg, #1b1b1b 0%, #151515 100%);
+  padding: 20px 12px;
+  border-radius: 24px;
+  border: 2px solid #0d0d0d;
+  box-shadow: inset 1px 1px 1px rgba(255, 255, 255, 0.05),
+              2px 4px 8px rgba(0, 0, 0, 0.8);
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.physicalButton {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #484848 0%, #252525 70%, #181818 100%);
+  border: 2px solid #0d0d0d;
+  
+  /* Double bezel ring effect (metallic bevel) */
+  box-shadow: 0 0 0 2px #3a3a3a, 
+              0 4px 6px rgba(0, 0, 0, 0.8), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.2);
+              
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.05s ease, border-color 0.15s ease;
+  position: relative;
+}
+
+.physicalButton:hover {
+  background: radial-gradient(circle at 35% 35%, #585858 0%, #303030 70%, #202020 100%);
+  box-shadow: 0 0 0 2px #555555, 
+              0 5px 8px rgba(0, 0, 0, 0.8), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.25);
+}
+
+.physicalButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 0 0 2px #222222,
+              0 1px 2px rgba(0, 0, 0, 0.9), 
+              inset 0 2px 4px rgba(0, 0, 0, 0.9);
+  background: #111111;
+}
+
+.captureButton {
+  background: radial-gradient(circle at 35% 35%, #b71c1c 0%, #7f0000 75%, #4a0000 100%);
+  box-shadow: 0 0 0 2px var(--camera-accent-red), 
+              0 4px 6px rgba(0, 0, 0, 0.8), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+.captureButton:hover {
+  background: radial-gradient(circle at 35% 35%, #d32f2f 0%, #9e0000 75%, #5f0000 100%);
+  box-shadow: 0 0 0 2px #ff5252, 
+              0 5px 8px rgba(0, 0, 0, 0.8), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.35);
+}
+
+.captureButton:active {
+  background: #2a0000;
+  box-shadow: 0 0 0 2px #5f0000,
+              0 1px 2px rgba(0, 0, 0, 0.9), 
+              inset 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: 8pt;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.8);
+}
+
+.activeButton {
+  box-shadow: 0 0 0 2.5px var(--text-orange), 
+              0 4px 6px rgba(0, 0, 0, 0.8), 
+              inset 0 1px 2px rgba(255, 255, 255, 0.2);
+}
+.activeButton .label {
+  color: var(--text-orange);
+}

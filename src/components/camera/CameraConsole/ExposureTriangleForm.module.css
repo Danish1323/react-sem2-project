@@ -1,0 +1,122 @@
+/* src/components/camera/CameraConsole/ExposureTriangleForm.module.css */
+.formContainer {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.slidersRow {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  width: 100%;
+}
+
+.railWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.railWrapper:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.activeRail {
+  background: rgba(255, 152, 0, 0.05);
+  border-color: rgba(255, 152, 0, 0.35);
+  box-shadow: 0 0 10px rgba(255, 152, 0, 0.05);
+}
+
+.railHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly 12pt */
+  font-weight: bold;
+  color: #cccccc;
+  cursor: pointer;
+}
+
+.value {
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly 12pt */
+  font-weight: bold;
+  color: #ffffff;
+  background: #000000;
+  padding: 1px 6px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  min-width: 55px;
+  text-align: center;
+}
+
+.activeRail .value {
+  color: var(--text-orange);
+  border-color: rgba(255, 152, 0, 0.5);
+  box-shadow: 0 0 4px rgba(255, 152, 0, 0.2);
+}
+
+/* Slider Track styling */
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 5px;
+  border-radius: 3px;
+  background: #111111;
+  outline: none;
+  margin: 6px 0;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(180deg, #888888 0%, #444444 100%);
+  border: 1px solid #000000;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  transition: transform 0.1s ease;
+}
+
+.activeRail .slider::-webkit-slider-thumb {
+  background: linear-gradient(180deg, #ffb74d 0%, var(--text-orange) 100%);
+  box-shadow: 0 0 5px var(--text-orange);
+}
+
+.slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.railBoundaries {
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-family);
+  font-size: 11pt; /* Strictly conforming or slightly smaller bound text */
+  color: var(--text-muted);
+}
+
+@media (max-width: 1000px) {
+  .slidersRow {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

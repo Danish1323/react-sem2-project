@@ -1,0 +1,70 @@
+/* src/components/camera/CameraTelemetryHUD/CameraTelemetryHUD.module.css */
+.telemetryBox {
+  background: var(--lcd-telemetry-bg);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  padding: 12px;
+  width: 230px;
+  color: #ffffff;
+  font-family: var(--font-family);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  user-select: none;
+}
+
+.title {
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly conform to 12pt */
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-orange);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  display: block;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly conform to 12pt */
+  color: #cccccc;
+}
+
+.value {
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly conform to 12pt */
+  font-weight: bold;
+}
+
+.highlightValue {
+  color: var(--text-orange);
+}
+
+.exportBtn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 6px;
+  background-color: var(--camera-body-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  color: #ffffff;
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly conform to 12pt */
+  font-weight: bold;
+  cursor: pointer;
+  pointer-events: auto; /* make sure clicks are captured */
+  transition: var(--transition-smooth);
+}
+
+.exportBtn:hover {
+  background-color: var(--camera-highlight);
+  border-color: #ffffff;
+}

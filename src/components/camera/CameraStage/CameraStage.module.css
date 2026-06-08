@@ -1,0 +1,26 @@
+/* src/components/camera/CameraStage/CameraStage.module.css */
+.stageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.renderingSection {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.configurationsSection {
+  width: 100%;
+  z-index: 5;
+}
+
+.statusSection {
+  width: 100%;
+}

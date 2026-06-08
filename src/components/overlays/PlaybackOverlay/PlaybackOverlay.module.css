@@ -1,0 +1,190 @@
+/* src/components/overlays/PlaybackOverlay/PlaybackOverlay.module.css */
+.playbackContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.96);
+  z-index: 6;
+  font-family: var(--font-family);
+  color: #ffffff;
+  pointer-events: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  user-select: none;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.galleryTitle {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.closeButton {
+  background: var(--camera-highlight);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  font-size: 9pt;
+  font-weight: bold;
+  border-radius: var(--button-border-radius);
+  transition: var(--transition-smooth);
+}
+
+.closeButton:hover {
+  background-color: var(--camera-accent-red);
+  border-color: var(--camera-accent-red);
+}
+
+/* Side-by-Side Viewport */
+.comparisonView {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 12px 0;
+  min-height: 0; /* allows flex scrolling/shrink */
+}
+
+.imageFrame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  height: 100%;
+  justify-content: center;
+  min-height: 0;
+}
+
+.imageLabel {
+  font-size: 10pt;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+}
+
+.compareImg {
+  max-width: 100%;
+  max-height: 240px;
+  object-fit: contain;
+  border-radius: 4px;
+  border: 2px solid var(--camera-bevel);
+  background-color: #000000;
+}
+
+/* Bottom Metadata and Navigation Section */
+.footerArea {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.metadataGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: #141414;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--camera-bevel);
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metaLabel {
+  font-size: 8pt;
+  font-weight: bold;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.metaValue {
+  font-size: 10pt;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Gallery Controls */
+.controlsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navGroup {
+  display: flex;
+  gap: 10px;
+}
+
+.navBtn {
+  background: var(--camera-body-secondary);
+  border: 1px solid var(--camera-highlight);
+  padding: 6px 14px;
+  font-size: 10pt;
+  font-weight: bold;
+  border-radius: var(--button-border-radius);
+  transition: var(--transition-smooth);
+}
+
+.navBtn:hover:not(:disabled) {
+  background: var(--camera-highlight);
+  border-color: #ffffff;
+}
+
+.navBtn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.deleteBtn {
+  background: #c62828;
+  border-color: #c62828;
+  color: #ffffff;
+}
+
+.deleteBtn:hover {
+  background: #d32f2f;
+  border-color: #d32f2f;
+}
+
+.counter {
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--text-secondary);
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  gap: 12px;
+  color: var(--text-muted);
+}
+.emptyStateText {
+  font-size: 14pt;
+  font-weight: bold;
+}
+.emptyStateSubtext {
+  font-size: 11pt;
+}

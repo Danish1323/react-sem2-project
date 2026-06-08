@@ -1,0 +1,85 @@
+/* src/components/camera/LightMeterScaleDisplay/LightMeterScaleDisplay.module.css */
+.meterContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 4px 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 320px;
+  position: relative;
+  user-select: none;
+}
+
+.scaleWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  height: 20px;
+}
+
+.scaleItem {
+  font-family: var(--font-family);
+  font-size: 12pt; /* Strictly conform to 12pt Times New Roman */
+  color: #ffffff;
+  width: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.centerMark {
+  color: var(--text-orange);
+}
+
+.ticksWrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  height: 10px;
+  padding: 0 8px;
+}
+
+.tick {
+  width: 2px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.tickMajor {
+  width: 2px;
+  height: 10px;
+  background: #ffffff;
+}
+
+.tickCenter {
+  width: 2px;
+  height: 10px;
+  background: var(--text-orange);
+}
+
+/* Needle */
+.track {
+  width: calc(100% - 16px);
+  position: absolute;
+  bottom: 0;
+  left: 8px;
+  height: 12px;
+}
+
+.needle {
+  position: absolute;
+  top: 0;
+  width: 4px;
+  height: 12px;
+  background: var(--text-orange);
+  transform: translateX(-50%);
+  border-radius: 1px;
+  box-shadow: 0 0 4px var(--text-orange);
+  
+  /* Smooth needle sliding transition */
+  transition: left 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}

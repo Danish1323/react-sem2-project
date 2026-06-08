@@ -1,0 +1,43 @@
+/* src/styles/variables.css */
+:root {
+  /* Color Palette - Graphite Matte DSLR Aesthetic */
+  --camera-bg: #0c0c0c;
+  --camera-body: #1f1f1f;
+  --camera-body-secondary: #2b2b2b;
+  --camera-bevel: #151515;
+  --camera-highlight: #444444;
+  --camera-metal: #181818;
+  --camera-accent-red: #d32f2f; /* Capture dot / recording indicators only */
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-muted: #666666;
+  --text-orange: #ff9800; /* Exposure warning / highlighted telemetry */
+  
+  /* LCD Colors */
+  --lcd-screen-bg: #000000;
+  --lcd-glow: rgba(255, 255, 255, 0.03);
+  --lcd-text: #ffffff;
+  --lcd-telemetry-bg: rgba(0, 0, 0, 0.65);
+  
+  /* Typography */
+  --font-family: "Times New Roman", serif;
+  --font-size-base: 12pt;
+  --font-size-small: 11pt;
+  --font-size-large: 14pt;
+  
+  /* Layout Dimensions */
+  --camera-border-radius: 12px;
+  --lcd-border-radius: 4px;
+  --button-border-radius: 6px;
+  
+  /* Shadows and Transitions */
+  --shadow-physical: inset 1px 1px 1px rgba(255, 255, 255, 0.1),
+                     3px 3px 6px rgba(0, 0, 0, 0.6);
+  --shadow-inset-button: inset 2px 2px 4px rgba(0, 0, 0, 0.8),
+                         inset -1px -1px 2px rgba(255, 255, 255, 0.1);
+  --shadow-lcd: 0 0 10px rgba(0, 0, 0, 0.9);
+  
+  --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}

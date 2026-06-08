@@ -1,0 +1,213 @@
+/* src/components/overlays/ChallengeOverlay/ChallengeOverlay.module.css */
+.challengeContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.95);
+  z-index: 6;
+  font-family: var(--font-family);
+  color: #ffffff;
+  pointer-events: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  user-select: none;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.title {
+  font-size: 14pt;
+  font-weight: bold;
+}
+
+.closeButton {
+  background: var(--camera-highlight);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  font-size: 9pt;
+  font-weight: bold;
+  border-radius: var(--button-border-radius);
+  transition: var(--transition-smooth);
+}
+
+.closeButton:hover {
+  background-color: var(--camera-accent-red);
+  border-color: var(--camera-accent-red);
+}
+
+/* Center Panel: Task Details and Live Board */
+.gameBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.taskCard {
+  background: #181818;
+  border: 1px solid #282828;
+  border-radius: 6px;
+  padding: 20px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.taskSceneName {
+  font-size: 14pt;
+  font-weight: bold;
+  color: var(--text-orange);
+}
+
+.evTargetDisplay {
+  font-size: 28pt;
+  font-weight: bold;
+  font-family: monospace;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  background: #101010;
+  padding: 6px 20px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.instructions {
+  font-size: 10.5pt;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Live Score Indicators */
+.liveStats {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+  border-top: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+  width: 100%;
+  justify-content: center;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.statLabel {
+  font-size: 8pt;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.statValue {
+  font-size: 14pt;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+/* Completion Badges and Stars */
+.resultCard {
+  background: #181818;
+  border: 1.5px solid var(--text-orange);
+  border-radius: 6px;
+  padding: 24px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 6px 16px rgba(255, 152, 0, 0.15);
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.grade {
+  font-size: 22pt;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.perfect { color: #4caf50; }
+.good { color: #2196f3; }
+.pass { color: var(--text-orange); }
+
+.starsRow {
+  display: flex;
+  gap: 12px;
+}
+
+.star {
+  color: #555555;
+  transition: color 0.3s ease;
+}
+
+.starActive {
+  color: #ffd700; /* gold */
+  filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+  animation: popStar 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popStar {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Footer and Action controls */
+.footerArea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 12px;
+}
+
+.scoreTracker {
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--text-orange);
+}
+
+.actionBtn {
+  background: var(--text-orange);
+  color: #000000;
+  border: none;
+  padding: 8px 20px;
+  font-size: 11pt;
+  font-weight: bold;
+  border-radius: var(--button-border-radius);
+  transition: var(--transition-smooth);
+}
+
+.actionBtn:hover {
+  background: #ffa726;
+  transform: translateY(-1px);
+}
+
+.actionBtn:active {
+  transform: translateY(1px);
+}

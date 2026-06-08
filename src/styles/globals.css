@@ -1,0 +1,24 @@
+/* src/styles/globals.css */
+@import "./reset.css";
+@import "./variables.css";
+
+body {
+  background-color: var(--camera-bg);
+  color: var(--text-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}

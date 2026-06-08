@@ -1,0 +1,204 @@
+/* src/components/camera/CameraBody/CameraBody.module.css */
+.bodyContainer {
+  position: relative;
+  width: 92vw;
+  height: 85vh;
+  max-width: 1550px;
+  max-height: 950px;
+  min-width: 1100px;
+  min-height: 680px;
+  
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 45%, #121212 100%);
+  border: 6px solid #111111;
+  border-radius: 20px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9),
+              inset 2px 2px 3px rgba(255, 255, 255, 0.05),
+              inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+  padding: 24px;
+  margin-top: 35px; /* Leave space for top dials sticking out */
+  
+  display: grid;
+  grid-template-columns: 90px 1fr 290px;
+  gap: 20px;
+  align-items: center;
+  overflow: visible; /* Let top dials extend beyond container */
+}
+
+/* Mechanical Top Dial Plate */
+.topPlate {
+  position: absolute;
+  top: -30px;
+  left: 30px;
+  width: calc(100% - 60px);
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Mode Dial on Left/Center */
+.modeDial {
+  width: 75px;
+  height: 30px;
+  background: repeating-linear-gradient(90deg, #151515, #151515 4px, #333 4px, #333 8px);
+  border-radius: 4px 4px 0 0;
+  border: 2px solid #0d0d0d;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+  margin-left: 80px;
+}
+.modeDial::after {
+  content: "M  S  A  P";
+  position: absolute;
+  top: 4px;
+  left: 0;
+  width: 100%;
+  font-family: sans-serif;
+  font-size: 7pt;
+  font-weight: bold;
+  color: #888888;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+/* Hot Shoe Mount above EVF */
+.hotShoe {
+  width: 60px;
+  height: 25px;
+  background: linear-gradient(90deg, #333 0%, #151515 15%, #444 50%, #151515 85%, #333 100%);
+  border: 2px solid #080808;
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  margin-left: 215px; /* Center it relative to EVF */
+  position: relative;
+}
+.hotShoe::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 12px;
+  width: 36px;
+  height: 12px;
+  background: #111;
+  border: 1px solid #555;
+  border-radius: 1px;
+}
+
+/* Right Command Dials */
+.exposureDial {
+  width: 65px;
+  height: 25px;
+  background: repeating-linear-gradient(90deg, #111, #111 3px, #2a2a2a 3px, #2a2a2a 6px);
+  border-radius: 3px 3px 0 0;
+  border: 2px solid #050505;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.6);
+  margin-left: auto;
+  margin-right: 120px;
+}
+
+/* Mechanical Silver Shutter Button on right grip */
+.silverShutter {
+  width: 42px;
+  height: 16px;
+  background: linear-gradient(180deg, #e0e0e0 0%, #b0b0b0 40%, #707070 100%);
+  border: 2px solid #555;
+  border-radius: 6px 6px 0 0;
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.6), inset 0 2px 2px #ffffff;
+  position: absolute;
+  right: 40px;
+  top: -12px;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: transform 0.05s ease;
+}
+.silverShutter:active {
+  transform: translateY(4px);
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.8);
+}
+
+/* Columns */
+.leftColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.centerColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  gap: 10px;
+}
+
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  height: 100%;
+  border-left: 2px solid var(--camera-bevel);
+  padding-left: 20px;
+  position: relative;
+  
+  /* Textured leather-like camera grip background overlay on the right side */
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+}
+
+/* Leatherette texture overlay for the grip zone */
+.rightColumn::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  right: -24px;
+  width: calc(100% + 4px);
+  height: calc(100% + 48px);
+  border-radius: 0 14px 14px 0;
+  background-image: 
+    radial-gradient(circle at 2px 2px, #1c1c1c 1px, transparent 1.5px),
+    radial-gradient(circle at 6px 6px, #151515 1px, transparent 1.5px);
+  background-size: 8px 8px;
+  opacity: 0.85;
+  z-index: 0;
+  pointer-events: none;
+  box-shadow: inset 3px 0 6px rgba(0, 0, 0, 0.6);
+  border-left: 2px solid #111111;
+}
+
+/* Make sure dial selector content renders on top of the grip background */
+.rightColumn > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Metal screw details in camera corners */
+.screw {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #555 30%, #222 80%);
+  border: 1px solid #111;
+  box-shadow: 1px 1px 1px rgba(255,255,255,0.05);
+}
+.screw::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 1px;
+  width: 8px;
+  height: 2px;
+  background: #111;
+  transform: rotate(45deg);
+}
+
+.screwTL { top: 12px; left: 12px; }
+.screwTR { top: 12px; right: 12px; }
+.screwBL { bottom: 12px; left: 12px; }
+.screwBR { bottom: 12px; right: 12px; }

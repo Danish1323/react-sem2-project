@@ -1,0 +1,352 @@
+/* src/components/overlays/MenuOverlay/MenuOverlay.module.css */
+.overlayContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(12, 12, 12, 0.95);
+  z-index: 6;
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  font-family: var(--font-family);
+  color: #ffffff;
+  pointer-events: auto; /* enable interactions */
+  user-select: none;
+}
+
+/* Left Navigation Sidebar */
+.sidebar {
+  background-color: #141414;
+  border-right: 2px solid var(--camera-bevel);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.menuTitle {
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--text-orange);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 0 16px 12px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 12px;
+}
+
+.sidebarButton {
+  text-align: left;
+  padding: 10px 16px;
+  font-size: 11pt;
+  font-weight: bold;
+  color: var(--text-secondary);
+  border-left: 3px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.sidebarButton:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+  color: #ffffff;
+}
+
+.activeSidebar {
+  color: #ffffff;
+  background-color: rgba(255, 152, 0, 0.08);
+  border-left-color: var(--text-orange);
+}
+
+/* Content Area */
+.contentArea {
+  padding: 20px;
+  overflow-y: auto;
+  height: 100%;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.sectionTitle {
+  font-size: 14pt;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.closeButton {
+  background: var(--camera-highlight);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 4px 12px;
+  font-size: 9pt;
+  font-weight: bold;
+  border-radius: var(--button-border-radius);
+  transition: var(--transition-smooth);
+}
+
+.closeButton:hover {
+  background-color: var(--camera-accent-red);
+  border-color: var(--camera-accent-red);
+}
+
+/* Scenes grid layout */
+.scenesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding-bottom: 10px;
+}
+
+.sceneCard {
+  background: #181818;
+  border: 1px solid #282828;
+  border-radius: var(--lcd-border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+}
+
+.sceneCard:hover {
+  transform: translateY(-2px);
+  border-color: var(--text-orange);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.activeCard {
+  border-color: var(--text-orange);
+  box-shadow: 0 0 8px rgba(255, 152, 0, 0.2);
+}
+
+.sceneThumb {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-bottom: 1px solid #252525;
+}
+
+.sceneCardBody {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.sceneName {
+  font-size: 11pt;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.sceneEV {
+  font-size: 8pt;
+  font-family: monospace;
+  color: var(--text-orange);
+  background: rgba(255, 152, 0, 0.1);
+  padding: 2px 6px;
+  border-radius: 3px;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.sceneDesc {
+  font-size: 9pt;
+  color: var(--text-secondary);
+  line-height: 1.3;
+  margin-top: 4px;
+}
+
+/* Profiles Management */
+.profilesSection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profileForm {
+  display: flex;
+  gap: 10px;
+  background: #181818;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #282828;
+}
+
+.profileInput {
+  flex: 1;
+  background: #101010;
+  border: 1px solid #333333;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 11pt;
+  color: #ffffff;
+}
+
+.profileInput:focus {
+  border-color: var(--text-orange);
+  outline: none;
+}
+
+.profileSaveBtn {
+  background: var(--text-orange);
+  color: #000000;
+  font-weight: bold;
+  padding: 6px 16px;
+  border-radius: 4px;
+  transition: var(--transition-smooth);
+}
+
+.profileSaveBtn:hover {
+  background: #ffa726;
+}
+
+.profilesList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.profileItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #161616;
+  border: 1px solid #222222;
+  padding: 10px 16px;
+  border-radius: 4px;
+}
+
+.profileDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.profileName {
+  font-size: 11pt;
+  font-weight: bold;
+}
+
+.profileMeta {
+  font-size: 9pt;
+  font-family: monospace;
+  color: var(--text-secondary);
+}
+
+.profileActions {
+  display: flex;
+  gap: 8px;
+}
+
+.profileLoadBtn {
+  background: #2e7d32;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 9pt;
+  transition: var(--transition-smooth);
+}
+
+.profileLoadBtn:hover {
+  background: #388e3c;
+}
+
+.profileDelBtn {
+  background: #c62828;
+  font-weight: bold;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-size: 9pt;
+  transition: var(--transition-smooth);
+}
+
+.profileDelBtn:hover {
+  background: #d32f2f;
+}
+
+/* Upload Interface */
+.uploadZone {
+  border: 2px dashed #333333;
+  padding: 30px;
+  text-align: center;
+  border-radius: 6px;
+  background: #151515;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.uploadZone:hover {
+  border-color: var(--text-orange);
+  background: #1b1b1b;
+}
+
+.uploadInput {
+  display: none;
+}
+
+.uploadPreview {
+  width: 240px;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #333333;
+  margin-top: 10px;
+}
+
+/* Settings and Reset */
+.settingsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dangerBtn {
+  background: #c62828;
+  color: #ffffff;
+  padding: 10px 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  align-self: flex-start;
+  transition: var(--transition-smooth);
+}
+
+.dangerBtn:hover {
+  background: #d32f2f;
+}
+
+/* About Screen (Educational content) */
+.aboutContent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  line-height: 1.5;
+  font-size: 10.5pt;
+  color: var(--text-secondary);
+}
+
+.aboutContent p {
+  margin-bottom: 8px;
+}
+
+.conceptTitle {
+  font-weight: bold;
+  color: var(--text-orange);
+  margin-top: 10px;
+  display: block;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+}

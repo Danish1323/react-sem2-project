@@ -1,0 +1,89 @@
+/* src/components/camera/LiveViewFinderCanvas/LiveViewFinderCanvas.module.css */
+.viewportContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: #000000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.renderCanvas {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* 3x3 Composition Grid */
+.gridOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.gridCell {
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gridCell:nth-child(3n) {
+  border-right: none;
+}
+
+.gridCell:nth-child(n+7) {
+  border-bottom: none;
+}
+
+/* Flash Effect */
+.shutterFlash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Exposure Warnings */
+.warningOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.exposureWarning {
+  font-family: var(--font-family);
+  font-size: 20pt;
+  font-weight: bold;
+  color: var(--text-orange);
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.9), 0 0 5px var(--text-orange);
+  animation: flashWarning 0.8s infinite alternate;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 6px 16px;
+  border-radius: 4px;
+  border: 1px solid var(--text-orange);
+}
+
+@keyframes flashWarning {
+  0% { opacity: 0.25; }
+  100% { opacity: 1.0; }
+}
