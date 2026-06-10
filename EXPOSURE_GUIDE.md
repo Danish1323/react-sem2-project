@@ -91,13 +91,13 @@ Your camera computes brightness using **Exposure Values (EV)**.
      -3  -2  -1   0  +1  +2  +3     -3  -2  -1   0  +1  +2  +3     -3  -2  -1   0  +1  +2  +3
 [ ]--I---|---|---|---|---|---|     ---|---|---|--I---|---|---|     ---|---|---|---|---|---I--[ ]
            Needle Left                    Needle Center                  Needle Right
-          (deltaEV > 1)                   (deltaEV = 0)                  (deltaEV < -1)
+          (deltaEV < -1)                  (deltaEV = 0)                  (deltaEV > 1)
 ```
 
 - **Exposure Difference ($\Delta\text{EV}$)**:
   - **$\Delta\text{EV} = 0$**: Correctly exposed. The light meter needle is centered on **0**.
-  - **$\Delta\text{EV} > 0$**: Underexposed. The image is too dark. The needle points to the **minus (-)** side. An on-screen **`UNDEREXPOSED`** alert flashes if $\Delta\text{EV} > 1.0$.
-  - **$\Delta\text{EV} < 0$**: Overexposed. The image is too bright. The needle points to the **plus (+)** side. An on-screen **`OVEREXPOSED`** alert flashes if $\Delta\text{EV} < -1.0$.
+  - **$\Delta\text{EV} > 0$**: Overexposed. The camera settings let in more light than the scene requires. The image is too bright. The needle points to the **plus (+)** side. An on-screen **`OVEREXPOSED`** alert flashes if $\Delta\text{EV} > 1.0$.
+  - **$\Delta\text{EV} < 0$**: Underexposed. The camera settings let in less light than the scene requires. The image is too dark. The needle points to the **minus (-)** side. An on-screen **`UNDEREXPOSED`** alert flashes if $\Delta\text{EV} < -1.0$.
 
 - **Luminance Histogram**:
   - Shows the distribution of dark (shadows, left side) to bright (highlights, right side) pixels in the scene.
