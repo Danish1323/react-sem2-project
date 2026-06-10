@@ -20,7 +20,7 @@ export function getExposureStatus(delta: number): string {
   const absDelta = Math.abs(delta);
   if (absDelta <= 0.1) {
     return "Correct Exposure";
-  } else if (delta < 0) {
+  } else if (delta > 0) {
     return "Overexposed";
   } else {
     return "Underexposed";
