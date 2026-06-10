@@ -3,11 +3,12 @@
 ---
 
 ## 🎓 STUDENT DETAILS
-*   **Student Name:** [Enter Your Name]
-*   **Roll Number:** [Enter Your Roll Number / UID]
-*   **Course / Program:** B.Tech Computer Science and Engineering (CSE)
-*   **Semester / Year:** Semester II (2025-26)
-*   **Subject:** ReactJS Web Application Development Lab (Case Study Evaluation)
+*   **Student Name:** Danish Shaikh
+*   **Roll Number:** 150096725147
+*   **Course / Program:** B.Tech Computer Science and Engineering
+*   **Subject:** React JS
+*   **Batch / Cohort:** 2025-29 / Jeff Bezos
+*   **Project Number:** 186
 *   **Project Title:** Photography Camera Manual Exposure Simulator
 
 ---
